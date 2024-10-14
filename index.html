@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Afdilla Ayu Rahmadhani</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8d3e4; /* Warna pastel untuk latar belakang */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Memastikan canvas berada di belakang konten */
+        }
+
+        .container {
+            text-align: center;
+            color: #ff69b4;
+            animation: fadeIn 2s ease-in-out;
+            z-index: 1;
+            position: relative;
+            background: rgba(255, 255, 255, 0.8); /* Tambahkan latar belakang putih dengan transparansi */
+            border-radius: 10px; /* Sudut membulat */
+            padding: 20px; /* Ruang dalam */
+            border: 10px solid transparent; /* Border awal transparan */
+            background-image: url('https://example.com/path-to-flower-border-image.png'); /* Ganti dengan URL gambar border bunga Anda */
+            background-clip: padding-box, border-box; /* Mengatur background border */
+            background-size: contain; /* Ukuran gambar sesuai dengan border */
+            background-repeat: no-repeat; /* Tidak mengulang gambar */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan untuk efek */
+        }
+
+        h1 {
+            font-size: 50px;
+            margin: 0;
+            animation: bounce 2s infinite;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: #ff1493;
+        }
+
+        .heart {
+            color: red;
+            font-size: 100px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .photo {
+            width: 200px; /* Ubah ukuran gambar sesuai kebutuhan */
+            height: auto; /* Menjaga proporsi gambar */
+            border-radius: 10px; /* Sudut membulat untuk gambar */
+            margin: 10px; /* Ruang antar gambar */
+        }
+
+        /* Gaya untuk tombol */
+        .video-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: #ff69b4; /* Warna latar belakang tombol */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 2; /* Memastikan tombol berada di atas elemen lain */
+            transition: background-color 0.3s, transform 0.3s; /* Tambahkan efek transform */
+            animation: pulse 1.5s infinite; /* Tambahkan efek berdenyut */
+        }
+
+        .video-button:hover {
+            background-color: #ff1493; /* Warna latar belakang saat hover */
+            transform: scale(1.1); /* Efek zoom saat hover */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05); /* Ganti ukuran sesuai kebutuhan */
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Gaya untuk elemen video */
+        #video-modal {
+            display: none; /* Tersembunyi secara default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            z-index: 3; /* Di atas konten lain */
+            padding: 20px; /* Tambahkan padding di dalam modal */
+        }
+
+        #video-modal video {
+            width: 400px; /* Ukuran video dikurangi */
+            height: auto; /* Menjaga proporsi video */
+            border-radius: 10px;
+        }
+
+        #close-video {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .video-title {
+            font-size: 24px; /* Ukuran font untuk judul video */
+            color: #ff1493; /* Warna judul */
+            margin-bottom: 10px; /* Ruang di bawah judul */
+        }
+
+        /* Animasi kuliah bergerak di latar belakang */
+        .moving-background {
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 150%;
+            height: 150%;
+            background-image: url('https://example.com/path-to-your-animation-image.png'); /* Ganti dengan URL gambar animasi kuliah Anda */
+            background-size: cover;
+            animation: moveBackground 30s linear infinite; /* Ubah durasi sesuai kebutuhan */
+            z-index: -2; /* Di belakang semua konten */
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="moving-background"></div> <!-- Elemen untuk latar belakang animasi -->
+
+    <canvas id="canvas"></canvas>
+
+    <div class="container">
+        <div class="heart">🎉🎉🎉🎉❤️🎉🎉🎉🎉</div>
+        <h1>Selamat Ulang Tahun ke 19 Sayangkuuuuu 😘😘</h1>
+        <h2>Semoga selalu diberi rezeki melimpah, umur yang panjang dan cita-cita tercapai ya sayangg😊</h2>
+        <h3>Selamat ulang tahun, sayang semoga aku bisa selalu menemanimu hingga hari tua nanti</h3>
+        <h4>Selalu berbakti kepada orang tua dan menjadi anak yang pintar dan solehah 🩷🩷</h4>
+        
+        <!-- Tambahkan beberapa gambar di sini -->
+        <div>
+            <img src="https://i.postimg.cc/HxM0mTRK/IMG-3745.avif" alt="Foto 1" class="photo"> <!-- Ganti dengan URL gambar pertama -->
+            <img src="https://i.postimg.cc/Xvpc2f8n/IMG-4841.avif" alt="Foto 2" class="photo"> <!-- Ganti dengan URL gambar kedua -->
+            <img src="https://i.postimg.cc/MpsmbP1s/IMG-1849.avif" alt="Foto 3" class="photo"> <!-- Ganti dengan URL gambar ketiga -->
+            <!-- Tambahkan gambar lainnya sesuai kebutuhan -->
+        </div>
+    </div>
+
+    <!-- Tombol untuk memutar video -->
+    <button class="video-button" id="videoButton">Momen Ketika Aku Nembak Kamu😁</button>
+
+    <!-- Modal untuk video -->
+    <div id="video-modal">
+        <button id="close-video">✖</button>
+        <video controls>
+            <source src="/Users/mac/Documents/tes ultah/copy_C3D360CC-8A07-4171-9C85-844940A5344E.MOV" type="video/mp4"> <!-- Ganti dengan path video Anda -->
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Tambahkan elemen audio di sini -->
+    <audio id="background-music" autoplay loop>
+        <source src="/Users/mac/Documents/tes ultah/ssstik.io_1728729502941.mp3" type="audio/mpeg"> <!-- Ganti dengan path file musik Anda -->
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Kembang api dan efek bintang & hati
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Firework {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 3 + 2;
+                this.alpha = 1;
+                this.hue = Math.random() * 360;
+                this.sparkles = [];
+
+                for (let i = 0; i < 100; i++) {
+                    this.sparkles.push({
+                        x: this.x,
+                        y: this.y,
+                        alpha: 1,
+                        hue: this.hue,
+                        size: Math.random() * 2 + 1,
+                        velocity: {
+                            x: Math.random() * 6 - 3,
+                            y: Math.random() * 6 - 3,
+                        },
+                    });
+                }
+            }
+
+            update() {
+                this.alpha -= 0.02;
+                for (let sparkle of this.sparkles) {
+                    sparkle.x += sparkle.velocity.x;
+                    sparkle.y += sparkle.velocity.y;
+                    sparkle.alpha -= 0.02;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = `hsl(${this.hue}, 100%, 50%)`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+
+                for (let sparkle of this.sparkles) {
+                    ctx.save();
+                    ctx.globalAlpha = sparkle.alpha;
+                    ctx.fillStyle = `hsl(${sparkle.hue}, 100%, 50%)`;
+                    ctx.beginPath();
+                    ctx.arc(sparkle.x, sparkle.y, sparkle.size, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+        }
+
+        const fireworks = [];
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (Math.random() < 0.05) {
+                fireworks.push(new Firework(Math.random() * canvas.width, Math.random() * canvas.height));
+            }
+            for (let firework of fireworks) {
+                firework.update();
+                firework.draw();
+            }
+            fireworks.filter(firework => firework.alpha > 0);
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Kontrol untuk video
+        const videoModal = document.getElementById('video-modal');
+        const videoButton = document.getElementById('videoButton');
+        const closeVideoButton = document.getElementById('close-video');
+
+        videoButton.addEventListener('click', () => {
+            videoModal.style.display = 'block';
+        });
+
+        closeVideoButton.addEventListener('click', () => {
+            videoModal.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
